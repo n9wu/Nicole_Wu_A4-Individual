@@ -1,0 +1,1204 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nicole Wu | Flo Health Redesign Portfolio</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap");
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --rose: #c2566d;
+        --rose-light: #f7e8ec;
+        --rose-mid: #e8a0b0;
+        --teal: #3d8b85;
+        --teal-light: #e4f0ef;
+        --sand: #f5f0e8;
+        --ink: #1a1714;
+        --ink-mid: #4a4540;
+        --ink-soft: #8a8480;
+        --white: #ffffff;
+        --border: rgba(26, 23, 20, 0.1);
+      }
+
+      body {
+        font-family: "DM Sans", sans-serif;
+        color: var(--ink);
+        background: var(--white);
+      }
+
+      .portfolio {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 2rem 1.5rem 4rem;
+      }
+
+      /* Hero */
+      .hero {
+        padding: 3.5rem 0 2rem;
+        border-bottom: 1px solid var(--border);
+        margin-bottom: 3rem;
+      }
+      .hero-label {
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--rose);
+        font-weight: 500;
+        margin-bottom: 1rem;
+      }
+      .hero-title {
+        font-family: "DM Serif Display", serif;
+        font-size: clamp(2.2rem, 5vw, 3.4rem);
+        line-height: 1.15;
+        color: var(--ink);
+        margin-bottom: 1rem;
+      }
+      .hero-title em {
+        font-style: italic;
+        color: var(--rose);
+      }
+      .hero-sub {
+        font-size: 1.05rem;
+        color: var(--ink-mid);
+        line-height: 1.7;
+        max-width: 560px;
+        margin-bottom: 1.5rem;
+        font-weight: 300;
+      }
+      .hero-meta {
+        display: flex;
+        gap: 2rem;
+        flex-wrap: wrap;
+      }
+      .hero-meta-item {
+        font-size: 12px;
+        color: var(--ink-soft);
+      }
+      .hero-meta-item strong {
+        display: block;
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--ink);
+        margin-bottom: 2px;
+      }
+      .hero-tag {
+        display: inline-block;
+        background: var(--rose-light);
+        color: var(--rose);
+        font-size: 11px;
+        font-weight: 500;
+        padding: 4px 10px;
+        border-radius: 20px;
+        letter-spacing: 0.05em;
+        margin-right: 6px;
+        margin-bottom: 6px;
+      }
+
+      /* Section headers */
+      .section {
+        margin-bottom: 3.5rem;
+      }
+      .section-label {
+        font-size: 10.5px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--ink-soft);
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+      }
+      .section-title {
+        font-family: "DM Serif Display", serif;
+        font-size: 1.7rem;
+        color: var(--ink);
+        margin-bottom: 1.2rem;
+        line-height: 1.25;
+      }
+      .section-body {
+        font-size: 0.95rem;
+        color: var(--ink-mid);
+        line-height: 1.8;
+        font-weight: 300;
+      }
+      .section-body + .section-body {
+        margin-top: 0.75rem;
+      }
+
+      /* Divider */
+      .divider {
+        width: 48px;
+        height: 2px;
+        background: var(--rose);
+        margin: 1.2rem 0;
+      }
+
+      /* Problem cards */
+      .card-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin-top: 1.4rem;
+      }
+      @media (max-width: 580px) {
+        .card-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .card {
+        background: var(--sand);
+        border-radius: 12px;
+        padding: 1.2rem 1.3rem;
+        border: 1px solid var(--border);
+      }
+      .card-accent {
+        border-left: 3px solid var(--rose);
+      }
+      .card-title {
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--ink);
+        margin-bottom: 0.4rem;
+      }
+      .card-body {
+        font-size: 12.5px;
+        color: var(--ink-mid);
+        line-height: 1.65;
+        font-weight: 300;
+      }
+      .card-teal {
+        border-left: 3px solid var(--teal);
+      }
+
+      /* Stakeholder pair */
+      .stakeholder-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin-top: 1.4rem;
+      }
+      @media (max-width: 580px) {
+        .stakeholder-row {
+          grid-template-columns: 1fr;
+        }
+      }
+      .stakeholder-card {
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 1.3rem;
+      }
+      .s-badge {
+        font-size: 10px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        font-weight: 500;
+        padding: 3px 9px;
+        border-radius: 20px;
+        display: inline-block;
+        margin-bottom: 0.6rem;
+      }
+      .s1-badge {
+        background: var(--rose-light);
+        color: var(--rose);
+      }
+      .s2-badge {
+        background: var(--teal-light);
+        color: var(--teal);
+      }
+      .stakeholder-name {
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--ink);
+        margin-bottom: 0.4rem;
+      }
+      .stakeholder-desc {
+        font-size: 12.5px;
+        color: var(--ink-mid);
+        line-height: 1.6;
+        font-weight: 300;
+        margin-bottom: 0.6rem;
+      }
+      .value-pill {
+        display: inline-block;
+        background: var(--white);
+        border: 1px solid var(--border);
+        font-size: 11px;
+        padding: 3px 9px;
+        border-radius: 20px;
+        margin-right: 4px;
+        margin-bottom: 4px;
+        color: var(--ink-mid);
+      }
+
+      /* Comparison redesign rows */
+      .redesign-block {
+        margin-top: 1.5rem;
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        overflow: hidden;
+      }
+      .redesign-header {
+        background: var(--sand);
+        padding: 0.9rem 1.3rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border-bottom: 1px solid var(--border);
+      }
+      .redesign-number {
+        width: 24px;
+        height: 24px;
+        background: var(--rose);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 11px;
+        font-weight: 500;
+        flex-shrink: 0;
+      }
+      .redesign-title {
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--ink);
+      }
+      .redesign-target {
+        font-size: 11px;
+        color: var(--ink-soft);
+        margin-left: auto;
+      }
+      .redesign-body {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+      @media (max-width: 580px) {
+        .redesign-body {
+          grid-template-columns: 1fr;
+        }
+      }
+      .redesign-col {
+        padding: 1.1rem 1.3rem;
+      }
+      .redesign-col + .redesign-col {
+        border-left: 1px solid var(--border);
+      }
+      .redesign-col-label {
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+      }
+      .label-problem {
+        color: #b04040;
+      }
+      .label-solution {
+        color: var(--teal);
+      }
+      .redesign-col-body {
+        font-size: 12.5px;
+        color: var(--ink-mid);
+        line-height: 1.65;
+        font-weight: 300;
+      }
+      .redesign-col-body ul {
+        padding-left: 1rem;
+      }
+      .redesign-col-body li {
+        margin-bottom: 3px;
+      }
+      .redesign-image-container {
+        margin-top: 1.2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+      .redesign-image-container img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        border: 1px solid var(--border);
+        mix-blend-mode: multiply;
+      }
+
+      /* Value map */
+      .value-map {
+        margin-top: 1.4rem;
+      }
+      .value-row {
+        display: flex;
+        gap: 0;
+        align-items: stretch;
+        margin-bottom: 0.6rem;
+        border-radius: 10px;
+        overflow: hidden;
+        border: 1px solid var(--border);
+      }
+      .value-left {
+        background: var(--sand);
+        padding: 0.75rem 1rem;
+        min-width: 160px;
+        font-size: 12.5px;
+        font-weight: 500;
+        color: var(--ink);
+        display: flex;
+        align-items: center;
+      }
+      .value-right {
+        padding: 0.75rem 1rem;
+        font-size: 12.5px;
+        color: var(--ink-mid);
+        line-height: 1.6;
+        font-weight: 300;
+        flex: 1;
+        display: flex;
+        align-items: center;
+      }
+      .value-arrow {
+        padding: 0.75rem 0.5rem;
+        display: flex;
+        align-items: center;
+        color: var(--ink-soft);
+        font-size: 12px;
+      }
+
+      /* Tension */
+      .tension-box {
+        background: var(--sand);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 1.3rem 1.4rem;
+        margin-top: 1.2rem;
+      }
+      .tension-vs {
+        display: flex;
+        gap: 1rem;
+        align-items: flex-start;
+        margin-bottom: 1rem;
+        flex-wrap: wrap;
+      }
+      .tension-side {
+        flex: 1;
+        min-width: 160px;
+      }
+      .tension-side-label {
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-weight: 500;
+        margin-bottom: 0.3rem;
+        color: var(--ink-soft);
+      }
+      .tension-side-val {
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--ink);
+        margin-bottom: 0.3rem;
+      }
+      .tension-side-body {
+        font-size: 12px;
+        color: var(--ink-mid);
+        line-height: 1.6;
+        font-weight: 300;
+      }
+      .tension-divider {
+        width: 1px;
+        background: var(--border);
+        align-self: stretch;
+        margin: 0 0.5rem;
+      }
+      .tension-vs-label {
+        font-size: 11px;
+        font-weight: 500;
+        color: var(--ink-soft);
+        padding: 0 0.5rem;
+        align-self: center;
+      }
+      .tension-resolution {
+        border-top: 1px solid var(--border);
+        padding-top: 1rem;
+        font-size: 12.5px;
+        color: var(--ink-mid);
+        line-height: 1.7;
+        font-weight: 300;
+      }
+      .tension-resolution strong {
+        color: var(--ink);
+        font-weight: 500;
+      }
+
+      /* Reflection */
+      .reflection-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin-top: 1.4rem;
+      }
+      @media (max-width: 580px) {
+        .reflection-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .reflection-card {
+        padding: 1.2rem 1.3rem;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+      }
+      .reflection-q {
+        font-size: 12px;
+        font-weight: 500;
+        color: var(--rose);
+        margin-bottom: 0.5rem;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+      }
+      .reflection-a {
+        font-size: 12.5px;
+        color: var(--ink-mid);
+        line-height: 1.7;
+        font-weight: 300;
+      }
+
+      /* Quote */
+      .pull-quote {
+        border-left: 3px solid var(--rose);
+        padding: 0.8rem 1.2rem;
+        margin: 1.5rem 0;
+        background: var(--rose-light);
+        border-radius: 0 10px 10px 0;
+      }
+      .pull-quote p {
+        font-family: "DM Serif Display", serif;
+        font-size: 1.05rem;
+        color: var(--ink);
+        line-height: 1.6;
+        font-style: italic;
+      }
+      .pull-quote cite {
+        font-size: 11px;
+        color: var(--ink-soft);
+        display: block;
+        margin-top: 0.4rem;
+        font-style: normal;
+      }
+
+      /* Process timeline */
+      .timeline {
+        margin-top: 1.4rem;
+      }
+      .timeline-item {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 1.4rem;
+      }
+      .timeline-left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-shrink: 0;
+      }
+      .timeline-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--rose);
+        flex-shrink: 0;
+        margin-top: 4px;
+      }
+      .timeline-line {
+        flex: 1;
+        width: 1px;
+        background: var(--border);
+        margin: 4px 0;
+      }
+      .timeline-right {
+        padding-bottom: 0.5rem;
+      }
+      .timeline-step {
+        font-size: 10.5px;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--ink-soft);
+        font-weight: 500;
+        margin-bottom: 0.25rem;
+      }
+      .timeline-desc {
+        font-size: 12.5px;
+        color: var(--ink-mid);
+        line-height: 1.65;
+        font-weight: 300;
+      }
+
+      /* GenAI */
+      .genai-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 1rem;
+        font-size: 12px;
+      }
+      .genai-table th {
+        background: var(--sand);
+        padding: 0.6rem 0.8rem;
+        text-align: left;
+        font-weight: 500;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: var(--ink-soft);
+        border-bottom: 1px solid var(--border);
+      }
+      .genai-table td {
+        padding: 0.65rem 0.8rem;
+        border-bottom: 1px solid var(--border);
+        color: var(--ink-mid);
+        vertical-align: top;
+        line-height: 1.55;
+        font-weight: 300;
+      }
+      .genai-table tr:last-child td {
+        border-bottom: none;
+      }
+
+      /* CTA / Link */
+      .prototype-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--rose);
+        color: white;
+        padding: 0.65rem 1.2rem;
+        border-radius: 8px;
+        font-size: 13px;
+        font-weight: 500;
+        text-decoration: none;
+        margin-top: 1rem;
+      }
+      .prototype-link:hover {
+        background: #a84460;
+      }
+
+      /* Footer */
+      .footer {
+        border-top: 1px solid var(--border);
+        padding-top: 1.5rem;
+        margin-top: 3rem;
+        font-size: 12px;
+        color: var(--ink-soft);
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      /* Print hint */
+      @media print {
+        .portfolio {
+          padding: 1rem;
+        }
+        .section {
+          page-break-inside: avoid;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="portfolio">
+      <header class="hero">
+        <p class="hero-label">
+          GBDA 306 · Winter 2026 · Value Sensitive Design
+        </p>
+        <h1 class="hero-title">Redesigning <em>Flo Health</em><br />App</h1>
+        <p class="hero-sub">
+          A values-based redesign of a menstrual health app — centering
+          wellbeing, trustworthiness, honesty, and factuality for two distinct
+          user groups.
+        </p>
+        <div style="margin-bottom: 1rem">
+          <span class="hero-tag">Value Sensitive Design</span>
+          <span class="hero-tag">UX Redesign</span>
+          <span class="hero-tag">Health Knowledge</span>
+          <span class="hero-tag">Figma / HTML Prototype</span>
+        </div>
+        <div class="hero-meta">
+          <div class="hero-meta-item"><strong>Designer</strong>Nicole Wu</div>
+          <div class="hero-meta-item"><strong>Course</strong>GBDA 306</div>
+          <div class="hero-meta-item"><strong>Term</strong>Winter 2026</div>
+          <div class="hero-meta-item">
+            <strong>Deliverable</strong>Final prototype
+          </div>
+        </div>
+        <a
+          class="prototype-link"
+          href="https://n9wu.github.io/Nicole_Wu_GBDA306_A3/"
+          target="_blank"
+          >&#9654; View Live Prototype</a
+        >
+      </header>
+
+      <section class="section">
+        <p class="section-label">01 — Overview</p>
+        <h2 class="section-title">What the Original Flo Got Wrong</h2>
+        <div class="divider"></div>
+        <p class="section-body">
+          Predictions were presented as single fixed dates without any
+          indication of uncertainty. Educational content was gated behind
+          tracking setup, language assumed menstruation, and articles lacked
+          visible sources or review credentials. As a result, users who came to
+          learn were structurally excluded, while tracking users were given
+          overly certain information that could increase anxiety. These issues
+          were not isolated interface problems, but structural outcomes of a
+          design that prioritized one type of user and assumed all users would
+          contribute personal data.
+        </p>
+      </section>
+
+      <section class="section">
+        <p class="section-label">02 — Stakeholders</p>
+        <h2 class="section-title">Who is this for?</h2>
+        <div class="divider"></div>
+        <p class="section-body">
+          VSD begins with a stakeholder analysis — identifying not just the
+          primary users but the full range of people affected by the design. Two
+          direct stakeholder groups in the redesign:
+        </p>
+        <div class="stakeholder-row">
+          <div class="stakeholder-card">
+            <span class="s-badge s1-badge">S1 — Cycle Trackers</span>
+            <p class="stakeholder-name">
+              Users who feel stress about not knowing where they are in their
+              cycle
+            </p>
+            <p class="stakeholder-desc">
+              People who use the app primarily to understand where they are in
+              their cycle, often managing anxiety about unpredictability. They
+              are already tracking data and want that data to feel meaningful
+              and honest, not alarming.
+            </p>
+            <div>
+              <span class="value-pill">Wellbeing (intrinsic)</span>
+              <span class="value-pill">Trustworthiness (instrumental)</span>
+            </div>
+          </div>
+          <div class="stakeholder-card">
+            <span class="s-badge s2-badge">S2 — Library Users</span>
+            <p class="stakeholder-name">
+              Users who come to learn about reproductive health
+            </p>
+            <p class="stakeholder-desc">
+              People who primarily want to learn about reproductive health, not
+              to track a cycle. They need the app to be upfront about what is
+              well-established, what is uncertain, and where the app may not be
+              fully accurate or applicable to all users — rather than presenting
+              all claims as equally authoritative facts.
+            </p>
+            <div>
+              <span class="value-pill">Honesty (intrinsic)</span>
+              <span class="value-pill">Factuality (instrumental)</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <p class="section-label">03 — Problem Analysis</p>
+        <h2 class="section-title">
+          What values did the original Flo embed — and fail to embed?
+        </h2>
+        <div class="divider"></div>
+        <p class="section-body">
+          Before designing anything, I mapped where the original app partially
+          addressed stakeholder values and where it failed entirely. This audit
+          became the foundation for specific, values-grounded design
+          requirements.
+        </p>
+        <div class="card-grid">
+          <div class="card card-accent">
+            <p class="card-title">Predictions shown as single fixed dates</p>
+            <p class="card-body">
+              Single fixed dates were presented as certain. A confident but
+              incorrect prediction felt more harmful than uncertainty.
+            </p>
+          </div>
+          <div class="card card-accent">
+            <p class="card-title">
+              Educational content gated behind data entry
+            </p>
+            <p class="card-body">
+              To read a health article, users must first complete a profile.
+              This structurally refuses access to S2 — users who want to learn
+              without sharing personal data.
+            </p>
+          </div>
+          <div class="card card-accent">
+            <p class="card-title">Symptoms Without Context</p>
+            <p class="card-body">
+              Logging symptoms returned data without explanation. Users could
+              not connect what they felt to their cycle phase, increasing
+              confusion rather than reducing it.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <p class="section-label">04 — Value to Design Mapping</p>
+        <h2 class="section-title">
+          Translating values into visible interface features
+        </h2>
+        <div class="divider"></div>
+        <p class="section-body">
+          One key learning from this process: design requirements only do their
+          job if they are visible to the user. A requirement like "annual
+          content audit" sounds meaningful but disappears into the backend. The
+          real work is making values legible in the interface itself.
+        </p>
+        <div class="value-map">
+          <div class="value-row">
+            <div class="value-left">Wellbeing (S1)</div>
+            <div class="value-arrow">→</div>
+            <div class="value-right">
+              Summary Mode on home screen (phase name + days to period +
+              expected symptom); additional insights collapsed by default
+            </div>
+          </div>
+          <div class="value-row">
+            <div class="value-left">Trustworthiness (S1)</div>
+            <div class="value-arrow">→</div>
+            <div class="value-right">
+              Predictions as date ranges; confidence badges (High/Moderate/Low);
+              Expandable panel explaining prediction logic and recent cycle
+              history
+            </div>
+          </div>
+          <div class="value-row">
+            <div class="value-left">Honesty (S2)</div>
+            <div class="value-arrow">→</div>
+            <div class="value-right">
+              App discloses content limitations upfront — content type labels
+              signal where claims are uncertain or may not apply to all readers
+              before they begin
+            </div>
+          </div>
+          <div class="value-row">
+            <div class="value-left">Factuality (S2)</div>
+            <div class="value-arrow">→</div>
+            <div class="value-right">
+              "Reviewed by licensed OB-GYN" badge; "Last Reviewed" date; health
+              claims presented as evidence-based ranges rather than single
+              figures; "Sources Used" academic panel
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <p class="section-label">05 — Design Decisions</p>
+        <h2 class="section-title">Key changes in the redesign</h2>
+        <div class="divider"></div>
+
+        <div class="redesign-block">
+          <div class="redesign-header">
+            <div class="redesign-number">1</div>
+            <p class="redesign-title">Focus Mode — Home Screen</p>
+            <span
+              class="redesign-target"
+              style="
+                background: var(--rose-light);
+                color: var(--rose);
+                font-size: 11px;
+                padding: 3px 9px;
+                border-radius: 20px;
+              "
+              >S1 · Wellbeing</span
+            >
+          </div>
+          <div class="redesign-body">
+            <div class="redesign-col">
+              <p class="redesign-col-label label-problem">Original problem</p>
+              <p class="redesign-col-body">
+                Home screen displayed multiple "My Daily Insights" widgets
+                simultaneously — high information density that created cognitive
+                overload rather than reassurance.
+              </p>
+            </div>
+            <div class="redesign-col">
+              <p class="redesign-col-label label-solution">Redesign</p>
+              <div class="redesign-col-body">
+                <ul>
+                  <li>
+                    Persistent "Designed for Focus" view: current phase, days to
+                    next period, expected symptom
+                  </li>
+                  <li>
+                    Phase Connection: when a symptom is logged, a brief
+                    explanation + reassurance note appears immediately
+                  </li>
+                  <li>
+                    All additional daily insights collapsed by default,
+                    expandable on tap
+                  </li>
+                </ul>
+              </div>
+              <div class="redesign-image-container">
+                <img src="Flo Health - Home-1.png" alt="Home Screen Redesign" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="redesign-block" style="margin-top: 0.75rem">
+          <div class="redesign-header">
+            <div class="redesign-number">2</div>
+            <p class="redesign-title">Prediction Details Screen</p>
+            <span
+              class="redesign-target"
+              style="
+                background: var(--rose-light);
+                color: var(--rose);
+                font-size: 11px;
+                padding: 3px 9px;
+                border-radius: 20px;
+              "
+              >S1 · Trustworthiness</span
+            >
+          </div>
+          <div class="redesign-body">
+            <div class="redesign-col">
+              <p class="redesign-col-label label-problem">Original problem</p>
+              <p class="redesign-col-body">
+                Predictions showed as a single fixed date ("Prediction: Day of
+                Ovulation") with no confidence information, no explanation, and
+                no acknowledgement that cycles vary.
+              </p>
+            </div>
+            <div class="redesign-col">
+              <p class="redesign-col-label label-solution">Redesign</p>
+              <div class="redesign-col-body">
+                <ul>
+                  <li>
+                    All predictions display as date ranges (e.g., "Expected
+                    between April 2 and April 5")
+                  </li>
+                  <li>
+                    Confidence badge (High / Moderate / Low) on every forecast
+                  </li>
+                  <li>Panel explaining prediction logic</li>
+                  <li>
+                    "Factors Affecting This Range" section lists recent logged
+                    events
+                  </li>
+                  <li>
+                    Recent cycle lengths chart shows the data behind the
+                    prediction
+                  </li>
+                </ul>
+              </div>
+              <div class="redesign-image-container">
+                <img
+                  src="Flo Health - Prediction Details-1.png"
+                  alt="Prediction Details Screen Redesign"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="redesign-block" style="margin-top: 0.75rem">
+          <div class="redesign-header">
+            <div class="redesign-number">3</div>
+            <p class="redesign-title">Dual-Mode Onboarding</p>
+            <span
+              class="redesign-target"
+              style="
+                background: var(--teal-light);
+                color: var(--teal);
+                font-size: 11px;
+                padding: 3px 9px;
+                border-radius: 20px;
+              "
+              >S2 · Honesty</span
+            >
+          </div>
+          <div class="redesign-body">
+            <div class="redesign-col">
+              <p class="redesign-col-label label-problem">Original problem</p>
+              <p class="redesign-col-body">
+                All educational content was gated behind a tracking setup flow.
+                A user who wants to learn about reproductive health without
+                tracking data had no path forward.
+              </p>
+            </div>
+            <div class="redesign-col">
+              <p class="redesign-col-label label-solution">Redesign</p>
+              <div class="redesign-col-body">
+                <ul>
+                  <li>
+                    Onboarding presents two equal-weight paths: "Track My Cycle"
+                    and "Explore Health Library"
+                  </li>
+                  <li>
+                    Library mode gives full access to all articles with zero
+                    data entry required
+                  </li>
+                  <li>Settings allow switching between modes at any time</li>
+                </ul>
+              </div>
+              <div class="redesign-image-container">
+                <img
+                  src="Flo - Welcome.png"
+                  alt="Dual-Mode Onboarding Redesign"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="redesign-block" style="margin-top: 0.75rem">
+          <div class="redesign-header">
+            <div class="redesign-number">4</div>
+            <p class="redesign-title">Health Library Article Pages</p>
+            <span
+              class="redesign-target"
+              style="
+                background: var(--teal-light);
+                color: var(--teal);
+                font-size: 11px;
+                padding: 3px 9px;
+                border-radius: 20px;
+              "
+              >S2 · Factuality + Honesty</span
+            >
+          </div>
+          <div class="redesign-body">
+            <div class="redesign-col">
+              <p class="redesign-col-label label-problem">Original problem</p>
+              <p class="redesign-col-body">
+                Articles presented health claims as facts with no sourcing, no
+                medical review credential, no date, and no acknowledgement of
+                evidence quality.
+              </p>
+            </div>
+            <div class="redesign-col">
+              <p class="redesign-col-label label-solution">Redesign</p>
+              <div class="redesign-col-body">
+                <ul>
+                  <li>
+                    Content type label before the reader begins: High Evidence /
+                    Emerging Evidence / Lived Experience
+                  </li>
+                  <li>
+                    "Reviewed by a licensed OB-GYN" badge on applicable articles
+                  </li>
+                  <li>"Last Reviewed" date displayed near article title</li>
+                  <li>Our commitment badge</li>
+                  <li>"Sources Used" academic panel at article footer</li>
+                  <li>
+                    Articles explicitly state when knowledge is incomplete or
+                    not universally applicable, rather than implying certainty
+                  </li>
+                </ul>
+              </div>
+              <div class="redesign-image-container">
+                <img
+                  src="Flo Health - Health Library-1.png"
+                  alt="Health Library Redesign"
+                />
+                <img
+                  src="Flo Health - Article Detail-1.png"
+                  alt="Article Detail Redesign"
+                />
+                <img
+                  src="Flo Health - Article Detail 2-1.png"
+                  alt="Article Detail Source Panel Redesign"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="redesign-block" style="margin-top: 0.75rem">
+          <div class="redesign-header">
+            <div class="redesign-number">5</div>
+            <p class="redesign-title">Privacy Status Card</p>
+            <span
+              class="redesign-target"
+              style="
+                background: var(--rose-light);
+                color: var(--rose);
+                font-size: 11px;
+                padding: 3px 9px;
+                border-radius: 20px;
+              "
+              >S1 + S2 · Trust</span
+            >
+          </div>
+          <div class="redesign-body">
+            <div class="redesign-col">
+              <p class="redesign-col-label label-problem">Original problem</p>
+              <p class="redesign-col-body">
+                No visible summary of what data Flo stores, where it is stored,
+                or how to delete it. Trust in health apps depends on data
+                transparency.
+              </p>
+            </div>
+            <div class="redesign-col">
+              <p class="redesign-col-label label-solution">Redesign</p>
+              <div class="redesign-col-body">
+                <ul>
+                  <li>
+                    Privacy Status card on home screen lists stored data
+                    (locally on device vs shared)
+                  </li>
+                  <li>
+                    Direct 2-click "Delete My Data" action — no buried settings
+                    menu required
+                  </li>
+                </ul>
+              </div>
+              <div class="redesign-image-container">
+                <img
+                  src="Flo Health - Settings  Privacy-1.png"
+                  alt="Settings Screen Redesign"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <p class="section-label">06 — Value Tensions</p>
+        <h2 class="section-title">Where values conflict</h2>
+        <div class="divider"></div>
+        <p class="section-body">
+          The core tension in this redesign was between S1 trustworthiness and
+          S2 honesty. More specifically, it was a tension between data-driven
+          accuracy and transparent acknowledgement that the app’s knowledge and
+          predictions may be incomplete or not fully accurate: S1 needs the app
+          to feel reliable and confident to reduce cycle anxiety, while S2 needs
+          the app to openly communicate what it does not know and where content
+          has limitations.
+        </p>
+
+        <div class="tension-box">
+          <div class="tension-vs">
+            <div class="tension-side">
+              <p class="tension-side-label">S1 value</p>
+              <p class="tension-side-val">Trustworthiness via tracking data</p>
+              <p class="tension-side-body">
+                S1 needs predictions and health content to feel dependable.
+                Surfacing too much uncertainty can increase anxiety rather than
+                reduce it, working against the wellbeing goal.
+              </p>
+            </div>
+            <div class="tension-divider"></div>
+            <div class="tension-vs-label">vs</div>
+            <div class="tension-divider"></div>
+            <div class="tension-side">
+              <p class="tension-side-label">S2 value</p>
+              <p class="tension-side-val">Honesty about content limitations</p>
+              <p class="tension-side-body">
+                S2 needs the app to be transparent about what is clinically
+                established versus emerging or uncertain, and to acknowledge
+                where health information may not apply to all bodies or
+                situations — without softening or hiding those caveats.
+              </p>
+            </div>
+          </div>
+          <div class="tension-resolution">
+            <strong>Resolution:</strong> This tension is addressed by separating
+            how uncertainty is communicated across different features.
+            Prediction-related interfaces (e.g., cycle forecasts) prioritize
+            trustworthiness by limiting the visibility of uncertainty to
+            maintain a sense of reliability for S1. In contrast, health content
+            explicitly foregrounds honesty through the content type label
+            system, where levels of evidence and limitations are clearly
+            signaled. By separating prediction features from informational
+            content, the design ensures that S1’s need for dependable guidance
+            is not undermined by excessive caveats, while still allowing S2’s
+            need for transparency and factual clarity to be fully supported.
+            This separation ensures that honesty does not undermine
+            trustworthiness, but is instead expressed in contexts where users
+            are actively seeking explanation rather than reassurance.
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <p class="section-label">07 — Feedback & Iteration</p>
+        <h2 class="section-title">How feedback shaped the final design</h2>
+        <div class="divider"></div>
+        <p class="section-body">
+          Assignment 4 required showing the prototype to real users and
+          gathering specific feedback. I conducted informal walkthroughs with
+          cycle-tracking app users (S1) and peers who use health apps primarily
+          for learning (S2).
+        </p>
+
+        <div class="timeline" style="margin-top: 1.5rem">
+          <div class="timeline-item">
+            <div class="timeline-left">
+              <div class="timeline-dot"></div>
+              <div class="timeline-line"></div>
+            </div>
+            <div class="timeline-right">
+              <p class="timeline-step">S1 Walkthrough — Prediction Screen</p>
+              <p class="timeline-desc">
+                Asked 2–3 cycle-tracking app users to walk through the
+                Prediction Details screen. Key finding: the confidence badge
+                labeling was initially unclear. Revised: added a one-line
+                plain-language explanation below each badge.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-left">
+              <div class="timeline-dot"></div>
+              <div class="timeline-line"></div>
+            </div>
+            <div class="timeline-right">
+              <p class="timeline-step">
+                S2 Walkthrough — Library Mode Onboarding
+              </p>
+              <p class="timeline-desc">
+                Asked peers who use health apps for reading whether the Library
+                entry path felt genuinely welcoming and equal in weight to the
+                tracking path. Key finding: the visual hierarchy initially
+                de-emphasized the Library path. Revised: gave both paths
+                identical button sizes and vertical positioning, with explicit
+                label parity.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-left">
+              <div class="timeline-dot"></div>
+              <div class="timeline-line"></div>
+            </div>
+            <div class="timeline-right">
+              <p class="timeline-step">Peer Review (Assignment 3 → 4)</p>
+              <p class="timeline-desc">
+                Peer reviewers flagged that the original design had too many
+                visible badges on article pages, creating visual noise rather
+                than trust signals. Revised: grouped the credentialing elements
+                into a collapsible section at the top, with a single visible
+                summary line. This made the information available without
+                front-loading every article with four badges.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      <footer class="footer">
+        <span>Nicole Wu · GBDA 306 · Winter 2026</span>
+        <span>Value Sensitive Design — Flo Health Redesign</span>
+      </footer>
+    </div>
+  </body>
+</html>
